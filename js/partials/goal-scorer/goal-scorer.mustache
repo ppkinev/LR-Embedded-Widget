@@ -1,0 +1,18 @@
+{{#NextMatch}}
+    <div class="dg-panel dg-max-height">
+        {{{backBtn}}}
+        <img src="{{logo}}" class="dg-widget-logo"/>
+        <h4 class="dg-pretitle">{{StartDate}}</h4>
+        <h2 class="dg-title dg-results-hidden">Who do you think the first goal scorer will be?</h2>
+        <h2 class="dg-title dg-results-el">What others think</h2>
+
+        <div class="dg-choice-area">
+            <div class="dg-teams-tabs">
+                <div class="dg-team-tab dg-team-tab-home">{{HomeTeam.Name}}</div>
+                <div class="dg-team-tab dg-team-tab-away">{{AwayTeam.Name}}</div>
+            </div>
+
+            <div class="dg-teams-players"></div>
+        </div>
+    </div>
+{{/NextMatch}}

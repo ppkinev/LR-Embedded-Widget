@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,300');
+@import "vars";
+@import "keyframes";
+
+[data-lr-widget] {
+	position: relative;
+}
+
+.fit-height {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	.dg-widget-placeholder {
+		height: 100%;
+	}
+
+	#dg-embedded-widget-styles {
+		height: 100%;
+
+		.dg-embedded-widget-holder {
+			height: 100%;
+
+			.dg-panel {
+				height: 100%;
+
+				&.dg-max-height {
+					max-height: none;
+				}
+			}
+		}
+
+		.dg-bet-list {
+			max-height: 100%;
+		}
+	}
+}
+
+#dg-embedded-widget-styles {
+	width: 100%;
+	background-color: @bg-grey;
+	padding: 10px;
+	box-sizing: border-box;
+	color: @default;
+	overflow: hidden;
+	position: relative;
+	min-height: 350px;
+
+	&.dg-everton-slider {
+		overflow-y: auto;
+		.dg-bet-list.dg-no-logo,
+		.dg-max-height.dg-no-logo {
+			max-height: none;
+		}
+	}
+
+	& when (@theme = 'black') {
+		background-color: @black-bg;
+		border: 1px solid @white;
+		padding: 0;
+		color: @white;
+	}
+
+	& when (@theme = 'mbet') {
+		color: @mbet-black;
+	}
+
+	.dg-embedded-widget-holder, .dg-widget-placeholder {
+		position: relative;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.dg-embedded-widget-holder {
+		white-space: nowrap;
+	}
+
+	a, p, div, span, h1, h2, h3, h4, h5, h6,
+	section, header, aside, ul, ol, li, b, i,
+	label, input, form, textarea, select, option,
+	img {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: 0;
+		float: none;
+		text-shadow: none;
+		background: none;
+		clear: none;
+		text-transform: none;
+		outline: none;
+		font-size: inherit;
+		font-family: Roboto, Helvetica, Calibri, Arial, sans-serif;
+		color: inherit;
+		font-weight: inherit;
+		font-style: normal;
+		line-height: inherit;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-align: inherit;
+		display: block;
+		text-decoration: none;
+		vertical-align: baseline;
+		position: static;
+		border-collapse: collapse;
+		width: auto;
+		height: auto;
+		list-style: none;
+		min-width: initial;
+		min-height: initial;
+		visibility: visible;
+		opacity: 1;
+		-webkit-font-smoothing: subpixel-antialiased;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	span, a, b, i {
+		display: inline;
+	}
+
+	// Project imports
+	@import "components";
+
+	@import "../js/partials/who-will-win/who-will-win";
+	@import "../js/partials/select-score/select-score";
+	@import "../js/partials/goal-scorer/goal-scorer";
+	@import "../js/partials/bet-list/bet-list";
+	@import "../js/partials/virtual-bet/virtual-bet";
+	@import "../js/partials/login/login";
+	@import "../js/partials/leaderboard/leaderboard";
+	@import "../js/partials/push-notifications/push-notifications";
+	@import "../js/partials/confirm-email/confirm-email";
+}
+
+@import "../js/components/notification-popup/notification-popup";
+
+#dg-widget-placeholder.dg-widget-placeholder {
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 300px;
+	background-color: @bg-grey;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	animation: spw-fade-in 0.3s ease forwards 1;
+
+	& when (@theme = 'black') {
+		background-color: @black-bg;
+	}
+
+	.dg-placeholder-image {
+		max-width: 160px;
+		margin-bottom: 30px;
+	}
+
+	.dg-preloader {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border-top: 10px solid @brand;
+		border-left: 10px solid @brand;
+		border-right: 10px solid @brand;
+		border-bottom: 10px solid fade(@brand, 50%);
+
+		& when (@theme = 'mbet') {
+			border-top: 10px solid @mbet-brand;
+			border-left: 10px solid @mbet-brand;
+			border-right: 10px solid @mbet-brand;
+			border-bottom: 10px solid fade(@mbet-brand, 50%);
+		}
+
+		animation: spw-infinite-spin 1s linear forwards infinite;
+	}
+}

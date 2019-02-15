@@ -1,0 +1,330 @@
+@import "vars";
+
+.dg-panel {
+	//position: absolute;
+	top: 0;
+	left: 0;
+
+	vertical-align: top;
+	position: relative;
+	display: inline-block;
+	background-color: @white;
+	box-shadow: 2px 2px 4px @bg-shadow;
+	min-height: 30px;
+	text-align: center;
+	padding: 20px 0 30px;
+	width: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	white-space: normal;
+	animation: spw-slide-in 0.2s ease forwards 1;
+
+	& when (@theme = 'black') {
+		background-color: @black-bg;
+		box-shadow: none;
+	}
+
+	&.dg-hide {
+		animation: spw-slide-out 0.2s ease forwards 1;
+	}
+
+	&.dg-results {
+		.dg-results-hidden {
+			display: none;
+		}
+		.dg-results-el {
+			display: block;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 5px;
+			width: 0;
+			background-color: @blue-bright;
+			z-index: 10;
+			animation: spw-full-width 0.9s ease-in forwards 1;
+
+			& when (@theme = 'mbet') {
+				background-color: @mbet-light;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: transparent;
+			z-index: 5;
+		}
+	}
+
+	.dg-results-el {
+		display: none;
+		animation: spw-fade-in 0.25s ease forwards 1;
+
+		span {
+			display: block;
+			color: @white;
+			font-size: 26px;
+			font-weight: 100;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			&:after {
+				content: '%';
+			}
+		}
+	}
+
+	&.dg-small-screen {
+		padding: 10px;
+
+		.dg-widget-logo {
+			display: none;
+		}
+
+		.dg-title {
+			font-size: 14px;
+			line-height: 16px;
+			margin: 10px 0;
+		}
+
+		.dg-btn {
+			height: 38px;
+			line-height: 38px;
+			padding: 0 28px;
+			font-size: 14px;
+		}
+
+		.dg-results-el span {
+			font-size: 18px;
+		}
+
+		.dg-page-back {
+			width: 20px;
+		}
+	}
+
+	&.dg-no-logo {
+		.dg-widget-logo {
+			display: none;
+		}
+	}
+
+	&.dg-no-shadows {
+		box-shadow: none;
+	}
+}
+
+.dg-pretitle {
+	color: @grey-light;
+	font-size: 12px;
+	font-weight: 100;
+	margin: 0;
+	padding: 0 30px;
+}
+
+.dg-title {
+	font-size: 20px;
+	line-height: 30px;
+	margin: 20px 0 30px;
+	font-weight: 400;
+	padding: 0 30px;
+
+	&.dg-results-el {
+		color: @brand;
+		display: none;
+
+		& when (@theme = 'black') {
+			color: @black-bej;
+		}
+
+		& when (@theme = 'mbet') {
+			color: @mbet-brand;
+		}
+	}
+}
+
+.dg-link {
+	font-size: 14px;
+	font-weight: 100;
+	border-bottom: 1px solid @white;
+	display: inline-block;
+	line-height: 20px;
+	padding: 0 4px;
+	cursor: pointer;
+	transition: padding 0.25s ease;
+
+	&:hover {
+		padding: 0 10px;
+	}
+}
+
+.dg-btn {
+	font-weight: 100;
+	height: 48px;
+	line-height: 48px;
+	display: inline-block;
+	padding: 0 40px;
+	border-radius: 24px;
+	text-align: center;
+	white-space: nowrap;
+	.outline-hover;
+
+	& when (@theme = 'black') {
+		background-color: @black-bej;
+		border: none;
+		color: @black-bg;
+		font-weight: 400;
+		transition: opacity 0.25s ease;
+		&:before {
+			box-shadow: none;
+		}
+		&:hover {
+			opacity: 0.75;
+			&:before {
+				box-shadow: none;
+			}
+		}
+	}
+
+	&.dg-small {
+		font-size: 14px;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 20px;
+		border-radius: 24px;
+	}
+
+	&[disabled] {
+		.disabled-button;
+	}
+
+	&.dg-branded {
+		background-color: @brand;
+		color: @white;
+		border: 0;
+		transition: opacity 0.25s ease;
+
+		& when (@theme = 'mbet') {
+			background-color: @mbet-brand;
+		}
+
+		&:before {
+			box-shadow: none;
+		}
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		&[disabled] {
+			.disabled-button;
+		}
+	}
+
+	&.dg-white {
+		background-color: @white;
+		color: @default;
+
+		& when (@theme = 'black') {
+			background-color: @black-bej;
+		}
+
+		&[disabled] {
+			.disabled-button;
+		}
+	}
+
+	&.dg-error {
+		background-color: @red;
+		color: @white;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&.dg-fb-login {
+		background-color: @fb-main;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			opacity: 1;
+			background-color: @fb-light;
+		}
+	}
+}
+
+.dg-simple-link {
+	color: @default;
+	font-size: 14px;
+	font-weight: 100;
+	cursor: pointer;
+	transition: color 0.25s ease;
+
+	&:hover {
+		color: @blue-bright;
+	}
+
+	& when (@theme = 'black') {
+		color: @grey-light;
+		font-size: 13px;
+		font-weight: 400;
+
+		&:hover {
+			color: @black-bej;
+		}
+	}
+
+	& when (@theme = 'mbet') {
+		&:hover {
+			color: @mbet-light;
+		}
+	}
+}
+
+.dg-widget-logo {
+	max-height: 45px;
+	width: auto;
+	display: block;
+	margin: 0 auto 10px;
+}
+
+.dg-section-padding {
+	padding: 0 20px;
+}
+
+.dg-color-brand {
+	color: @brand;
+}
+
+.dg-max-height {
+	max-height: 390px;
+}
+
+.dg-page-back {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 26px;
+	cursor: pointer;
+	fill: @grey-light;
+	transition: fill 0.3s ease;
+
+	&:hover {
+		fill: @brand;
+
+		& when (@theme = 'black') {
+			fill: @black-bej;
+		}
+	}
+}

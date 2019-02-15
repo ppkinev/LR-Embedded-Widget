@@ -1,0 +1,134 @@
+@import "../../../less/vars";
+
+.dg-login {
+	//position: absolute;
+	//top: 0;
+	//left: 0;
+
+	vertical-align: top;
+	display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: @blue-bright;
+	color: @white;
+	white-space: normal;
+	padding: 20px 30px 40px;
+	text-align: center;
+	animation: spw-slide-in 0.2s ease 0.15s forwards 1;
+
+	& when (@theme = 'black') {
+		background-color: @black-bg;
+	}
+
+	& when (@theme = 'mbet') {
+		background-color: @mbet-black;
+	}
+
+	&.dg-hide {
+		animation: spw-slide-out 0.2s ease forwards 1;
+	}
+
+	.dg-login-form {
+		margin-top: 10px;
+	}
+
+	.dg-title {
+		margin: 15px 0 10px;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 24px;
+	}
+	.dg-pretitle {
+		color: @white;
+	}
+
+	.choices-area {
+		margin-top: 20px;
+	}
+
+	.dg-btn {
+		-webkit-appearance: none;
+		width: 100%;
+		& + .dg-btn {
+			margin-top: 15px;
+		}
+	}
+
+	.dg-trophey {
+		max-height: 100px;
+		display: inline-block;
+	}
+
+	.dg-form.dg-form-jiro {
+		margin-top: 30px;
+		margin-bottom: 15px;
+		@import "dg-jiro-inputs";
+
+		.dg-input-hidden {
+			display: none;
+		}
+
+		.dg-input {
+			&:after {
+				content: attr(data-error);
+				position: absolute;
+				bottom: 0;
+				transform: translateY(120%);
+				text-align: left;
+				font-size: 12px;
+				color: @default;
+				border-bottom: 1px solid @red;
+
+				& when (@theme = 'black') {
+					color: @red;
+				}
+			}
+		}
+
+		.dg-error {
+			.dg-input-field {
+				background-color: fade(@red, 70%);
+			}
+		}
+	}
+
+	.dg-btn-login {
+		margin-top: 30px;
+	}
+
+	.dg-btn-forgot {
+		margin-top: 30px;
+	}
+}
+
+.dg-small-screen {
+	overflow-y: auto;
+
+	.dg-trophey {
+		max-height: 70px;
+	}
+	.dg-title {
+		margin: 10px 0 5px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.dg-btn {
+		height: 38px;
+		line-height: 38px;
+		padding: 0 28px;
+		font-size: 14px;
+	}
+
+	.dg-form.dg-form-jiro {
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+
+	.dg-pretitle {
+		line-height: 16px;
+	}
+}

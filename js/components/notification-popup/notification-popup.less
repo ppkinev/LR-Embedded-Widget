@@ -1,0 +1,88 @@
+@import "../../../less/vars";
+
+.dg-notification {
+	margin: 0;
+	box-sizing: border-box;
+	border: 0;
+	float: none;
+	text-shadow: none;
+	background: none;
+	clear: none;
+	text-transform: none;
+	outline: none;
+	font-family: Roboto, Helvetica, Calibri, Arial, sans-serif;
+	font-weight: inherit;
+	font-style: normal;
+	letter-spacing: 0;
+	text-indent: 0;
+	text-align: inherit;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	vertical-align: baseline;
+	border-collapse: collapse;
+	width: auto;
+	list-style: none;
+	min-width: initial;
+	min-height: initial;
+	visibility: visible;
+	opacity: 1;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-tap-highlight-color: transparent;
+
+
+	position: absolute;
+	//bottom: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 0;
+	height: 100px;
+	background-color: @blue-bright;
+	color: @white;
+	padding: 0 30px;
+	font-size: 14px;
+	line-height: 22px;
+	animation: spw-slide-up 0.25s ease forwards 1;
+
+	& when (@theme = 'mbet') {
+		background-color: @mbet-brand;
+	}
+
+	&.dg-hide {
+		animation: spw-slide-upback 0.25s linear forwards 1;
+	}
+
+	&.dg-error {
+		background-color: @orange;
+		.dg-notification-holder {
+			padding-left: 80px;
+		}
+	}
+
+	.dg-error-icon {
+		height: 80%;
+		width: auto;
+		position: absolute;
+		left: 10px;
+		bottom: 0;
+	}
+
+	.dg-notification-holder {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.dg-notification-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		font-size: 20px;
+		font-weight: 100;
+		cursor: pointer;
+	}
+}

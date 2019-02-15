@@ -1,0 +1,91 @@
+@import "../../../less/vars";
+
+.dg-bet-list {
+	.dg-virtual-bet {
+		padding-top: 0;
+
+		.dg-pretitle {
+			line-height: 20px;
+			padding: 7px 30px;
+			border-bottom: 1px solid @bg-grey;
+
+			& when (@theme = 'black') {
+				border-bottom: 1px solid @default;
+			}
+		}
+		@import '../../components/bet-slider/bet-slider';
+
+		.dg-btn {
+			margin: 0 26px 30px;
+			width: auto;
+		}
+
+		.dg-virtual-error {
+			color: @red;
+			text-align: center;
+			padding: 20px 35px;
+
+			.dg-error-title {
+				font-size: 18px;
+				font-weight: 100;
+				margin-bottom: 20px;
+			}
+
+			.dg-error-holder {
+				//padding-left: 30px;
+			}
+
+			.dg-error-item {
+				color: @red;
+				font-size: 14px;
+				line-height: 20px;
+				//list-style-type: disc;
+				display: list-item;
+			}
+
+			.dg-btn {
+				margin: 25px 0 0;
+			}
+		}
+
+		.dg-virtual-bet-panel {
+			padding: 20px 0 0;
+			border-bottom: 1px solid @default;
+		}
+
+		.dg-choice {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 12px 0;
+
+			.dg-image-holder {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background-position: 50%;
+				background-size: 75%;
+				background-repeat: no-repeat;
+				background-color: @white;
+				border: 1px solid @grey-blue;
+				margin-right: 6px;
+
+				& when (@theme = 'black') {
+					border: none;
+				}
+			}
+
+			.dg-choice-answer {
+				font-size: 16px;
+				font-weight: 100;
+				transition: color 0.3s ease;
+				text-align: left;
+				max-width: 180px;
+
+				b {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}

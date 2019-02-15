@@ -1,0 +1,276 @@
+@import "../../../less/vars";
+
+.dg-bet-list {
+	max-height: 395px;
+	width: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	white-space: normal;
+	opacity: 0;
+	vertical-align: top;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	position: relative;
+	animation: spw-slide-in 0.2s ease 0.15s forwards 1;
+
+	&.dg-hide {
+		.dg-panel {
+			animation: spw-slide-out 0.2s ease forwards 1;
+		}
+	}
+
+	.dg-panel {
+		vertical-align: top;
+		top: 0;
+		left: 0;
+		display: inline-block;
+		position: relative;
+		padding: 5px 0 0;
+		transition: opacity 0.25s ease,
+		box-shadow 0.25s ease;
+
+		&:hover {
+			opacity: 0.7;
+			box-shadow: 2px 2px 4px darken(@bg-shadow, 10%);
+
+			& when (@theme = 'black') {
+				box-shadow: none;
+			}
+		}
+
+		& + .dg-panel {
+			margin-top: 5px;
+
+			& when (@theme = 'black') {
+				margin-top: 5px;
+				border-top: 2px solid @white;
+			}
+		}
+	}
+
+	.dg-bet-top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 5px 0 20px;
+		height: 40px;
+		font-size: 12px;
+		font-weight: 100;
+	}
+
+	.dg-bet-desc {
+		text-align: left;
+	}
+
+	.dg-image-holder {
+		max-width: 120px;
+		margin-right: 15px;
+	}
+
+	.dg-bm-image-holder {
+		height: 38px;
+		margin-left: 8px;
+	}
+
+	.dg-bookmaker-image {
+		max-height: 100%;
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		display: inline-block;
+	}
+
+	.dg-bookmakers-description {
+		font-size: 12px;
+		font-weight: 400;
+		text-align: left;
+	}
+
+	.dg-bet-choice {
+		padding: 15px 20px 5px;
+		border-top: 1px solid @grey-blue;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+
+		& when (@theme = 'black') {
+			border-top: 1px solid @default;
+		}
+
+		.dg-choice-question {
+			color: @grey-light;
+			font-size: 12px;
+			font-weight: 100;
+			transition: color 0.3s ease;
+		}
+
+		.dg-holder {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row;
+		}
+
+		.dg-choice-holder {
+			margin-bottom: 22px;
+		}
+
+		.dg-choice {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 12px 0;
+
+			.dg-image-holder {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background-position: 50%;
+				background-size: 75%;
+				background-repeat: no-repeat;
+				background-color: @white;
+				border: 1px solid @grey-blue;
+				margin-right: 6px;
+
+				& when (@theme = 'black') {
+					border: none;
+				}
+			}
+
+			.dg-choice-answer {
+				font-size: 16px;
+				font-weight: 100;
+				transition: color 0.3s ease;
+				text-align: left;
+				max-width: 180px;
+
+				b {
+					font-weight: 700;
+				}
+			}
+		}
+
+		.dg-bet-cta {
+			font-size: 16px;
+			font-weight: 100;
+			color: @white;
+			display: inline-block;
+			background-color: @blue-bright;
+			padding: 0 20px;
+			line-height: 40px;
+			height: 40px;
+			white-space: nowrap;
+			border-radius: 20px;
+			transition: color 0.3s ease,
+			background-color 0.3s ease;
+
+			& when (@theme = 'black') {
+				background-color: @black-bej;
+				color: @black-bg;
+				font-weight: 700;
+			}
+
+			& when (@theme = 'mbet') {
+				background-color: @mbet-light;
+			}
+		}
+
+		.dg-subtitle {
+			font-size: 12px;
+			line-height: 18px;
+			color: @default;
+			font-weight: 100;
+			margin-top: 6px;
+			white-space: nowrap;
+			transition: color 0.2s ease;
+
+			& when (@theme = 'black') {
+				color: @grey-light;
+			}
+		}
+
+		&:hover {
+			background-color: @blue-bright;
+			box-shadow: 0 4px 5px @grey-blue;
+
+			.dg-choice-question, .dg-choice-answer {
+				color: @white;
+			}
+
+			.dg-bet-cta {
+				color: @blue-bright;
+				background-color: @white;
+			}
+
+			& when (@theme = 'black') {
+				background-color: @black-bej;
+				box-shadow: none;
+				.dg-bet-cta {
+					color: @black-bg;
+				}
+				.dg-subtitle {
+					color: @black-bg;
+				}
+			}
+
+			& when (@theme = 'mbet') {
+				background-color: @mbet-brand;
+				box-shadow: none;
+
+				.dg-bet-cta {
+					color: @mbet-brand;
+				}
+			}
+		}
+
+		.dg-bet-cta-holder {
+			margin: 0 10px;
+		}
+	}
+
+	.dg-bet-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 0 20px;
+		height: 40px;
+		border-top: 1px solid @grey-blue;
+
+		& when (@theme = 'black') {
+			border-top: 1px solid @default;
+		}
+	}
+
+	&.dg-small-screen {
+		.dg-bet-choice {
+			padding: 0 20px 10px;
+
+			.dg-holder {
+				flex-direction: column;
+			}
+
+			.dg-choice-holder {
+				margin-bottom: 0;
+			}
+
+			.dg-choice {
+				.dg-choice-answer {
+					font-size: 14px;
+					font-weight: 400;
+				}
+			}
+
+			.dg-subtitle {
+				font-size: 11px;
+			}
+
+			.dg-bet-cta {
+				font-size: 14px;
+				line-height: 34px;
+				height: 34px;
+			}
+		}
+	}
+}

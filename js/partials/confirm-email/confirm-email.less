@@ -1,0 +1,22 @@
+@import "../../../less/vars";
+
+.dg-confirm-email {
+    padding: 20px 30px;
+    background-color: @blue-bright;
+
+    > * {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & when (@theme = 'mbet') {
+        background-color: @mbet-brand;
+    }
+
+    .dg-pretitle {
+        color: @white;
+        padding: 0;
+    }
+}

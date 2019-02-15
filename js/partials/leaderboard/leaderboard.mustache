@@ -1,0 +1,14 @@
+<div class="dg-leaderboard-panel">
+    <h4 class="dg-pretitle">This month's top players</h4>
+    <ul class="dg-users-list">
+        {{#.}}
+            <li class="dg-user-item">
+                <div class="dg-image-holder">
+                    <img src="{{ImageUrl}}" alt="{{UserName}}">
+                </div>
+                <div class="dg-points">{{AnswersCount}} answers</div>
+                <div class="dg-user-name">{{UserName}}</div>
+            </li>
+        {{/.}}
+    </ul>
+</div>

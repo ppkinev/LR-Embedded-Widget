@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test-embedded-widget</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="sign-out">Sign Out</div>
+
+<!--<div class="test-block" data-lr-widget-->
+     <!--data-default-image="mbet"-->
+     <!--data-leaderboard="on"-->
+     <!--data-fit="true"-->
+<!--&gt;</div>-->
+
+<div class="test-block" data-lr-widget
+     data-default-image="everton"
+></div>
+
+<!--<div class="test-block test-block-2" data-lr-widget-->
+     <!--data-default-image="everton"></div>-->
+<!--data-skin="black"-->
+<!--data-team="Hull"-->
+
+<script src="dist/widget.js" id="dg-embedded-sp"
+        async="async" defer="defer"
+        data-platform="test"
+        data-skin="everton"
+        data-key="everton_rewards_sp_widget_test"
+></script>
+
+
+<!-- MBET KEY   : 58b5912b-a9e9-49f3-bd91-c337c80639d0 -->
+<!-- EVERTON KEY: 9B9A254B-D805-4ECC-A708-52D1C3A5CA3B -->
+<!-- RONALDO KEY: CDC45EA5-C812-4E40-9ED2-ADDCA671ADC8 -->
+
+<!--<script>-->
+<!--let div = document.createElement('div');-->
+<!--div.className = 'test-block';-->
+<!--div.setAttribute('data-lr-widget', 'true');-->
+
+<!--setTimeout(function(){-->
+<!--document.body.appendChild(div);-->
+<!--}, 15000);-->
+<!--</script>-->
+<script>
+    var signOut = document.getElementById('sign-out');
+    signOut.addEventListener('click', function () {
+
+    });
+
+    window.addEventListener('load', function(){
+    	var script = document.getElementById('dg-embedded-sp');
+    	if (script.getAttribute('data-skin') === 'black') {
+    		document.body.style.backgroundColor = '#000000';
+        }
+    });
+</script>
+
+</body>
+</html>

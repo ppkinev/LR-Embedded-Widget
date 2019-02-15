@@ -1,0 +1,23 @@
+<div class="dg-panel dg-virtual-bet">
+    <h4 class="dg-pretitle">How much credits would you like to bet?</h4>
+    {{^error}}
+        <!--{{{betSlider}}}-->
+        <!--<div class="dg-btn dg-branded">Place virtual bet</div>-->
+        <div class="dg-virtual-bet-holder"></div>
+        <div class="dg-bet-footer">
+            <div class="dg-simple-link dg-edit">Edit prediction</div>
+            <div class="dg-simple-link dg-next">Next fixture</div>
+        </div>
+    {{/error}}
+    {{#error}}
+        <div class="dg-virtual-error">
+            <h3 class="dg-error-title">Contradict answers:</h3>
+            <ul class="dg-error-holder">
+                {{#errors}}
+                    <li class="dg-error-item">{{{.}}}</li>
+                {{/errors}}
+            </ul>
+            <div class="dg-btn dg-error">Answer again</div>
+        </div>
+    {{/error}}
+</div>

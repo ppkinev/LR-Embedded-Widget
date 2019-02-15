@@ -1,0 +1,63 @@
+@import "../../../less/vars";
+
+.dg-push-page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: @results-fade;
+	animation: spw-slide-in 0.3s ease forwards 1;
+
+	&.dg-hide {
+		animation: spw-slide-out 0.3s ease forwards 1;
+	}
+
+	.dg-push-notification-holder {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		padding: 40px 30px 20px;
+	}
+
+	& when (@theme = 'black') {
+		background-color: @black-bg-faded;
+	}
+
+	& when (@theme = 'mbet') {
+		background-color: @mbet-push-fade;
+	}
+
+	.dg-notification-icon {
+		width: 110px;
+		margin: 20px auto;
+		.dg-notification-bg {
+			fill: @white;
+		}
+		.b {fill: @orange;}
+		.c {fill: #334d5c;}
+		.d {fill: #046380;}
+		.e {fill: #5c4b51;}
+	}
+
+	.dg-notification-title {
+		color: @white;
+		font-size: 22px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+
+	.dg-btn ~ .dg-btn {
+		margin-top: 12px;
+	}
+
+	.dg-btn.dg-white {
+		& when (@theme = 'black') {
+			background-color: @bg-grey;
+			opacity: 0.7;
+		}
+	}
+}

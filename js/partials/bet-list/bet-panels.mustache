@@ -1,0 +1,35 @@
+{{#.}}
+    <div class="dg-panel">
+        <div class="dg-bet-top">
+            <div class="dg-bet-desc">Your total potential winnings with</div>
+            <div class="dg-bm-image-holder"><img class="dg-bookmaker-image" src="{{LogoUrl}}"></div>
+            <!--<h6 class="dg-bookmakers-description">Place the real bet with <span-->
+            <!--class="dg-color-brand">{{SiteUrl}}</span></h6>-->
+        </div>
+
+        {{#Odds}}
+            <div class="dg-bets" data-url="{{url}}" data-ga-name="{{gaName}}">
+                <div class="dg-bet-choice">
+                    <div class="dg-holder">
+                        <div class="dg-choice-holder">
+                            <div class="dg-choice">
+                                <div class="dg-image-holder" style="background-image: url('{{icon}}')"></div>
+                                <div class="dg-choice-answer">{{{question}}}</div>
+                            </div>
+                        </div>
+                        <div class="dg-bet-cta-holder">
+                            <div class="dg-bet-cta">{{cta}}</div>
+                            <h5 class="dg-subtitle">Using {{Name}}'s £{{FreeBet}} Free Bet</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/Odds}}
+
+        <div class="dg-bet-footer">
+            <div class="dg-simple-link dg-edit">Edit prediction</div>
+            <div class="dg-simple-link dg-next">Next fixture</div>
+        </div>
+
+    </div>
+{{/.}}

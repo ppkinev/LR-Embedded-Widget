@@ -1,0 +1,109 @@
+@import "../../../less/vars";
+
+.dg-leaderboard-panel {
+	background-color: @white;
+	padding: 0 10px 10px;
+	text-align: center;
+	box-shadow: 2px 2px 4px @bg-shadow;
+	margin-top: 10px;
+	white-space: normal;
+
+	& when (@theme = 'black') {
+		background-color: @black-bg;
+		box-shadow: none;
+		margin-top: 0;
+	}
+
+	.dg-pretitle {
+		line-height: 34px;
+		border-bottom: 1px solid @bg-grey;
+
+		& when (@theme = 'black') {
+			border-bottom: 1px solid @default;
+			border-top: 1px solid @default;
+			font-weight: 400;
+		}
+	}
+
+	.dg-users-list {
+		margin: 10px 0 3px;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	.dg-user-item {
+		margin: 0 3%;
+		text-align: center;
+		width: 26%;
+	}
+
+	.dg-image-holder {
+		overflow: hidden;
+		border-radius: 50%;
+		max-width: 50px;
+		max-height: 50px;
+		display: inline-block;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			position: static;
+		}
+	}
+
+	.dg-points {
+		color: @grey-light;
+		font-size: 11px;
+		line-height: 16px;
+		font-weight: 100;
+		& when (@theme = 'black') {
+			color: @white;
+			font-weight: 400;
+		}
+	}
+
+	.dg-user-name {
+		color: @brand;
+		font-size: 12px;
+		line-height: 16px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		& when (@theme = 'black') {
+			color: @black-bej;
+			font-weight: 400;
+		}
+	}
+
+	&.dg-no-shadows {
+		box-shadow: none;
+	}
+}
+
+
+.dg-small-screen {
+	.dg-pretitle {
+		line-height: 22px;
+		font-size: 10px;
+	}
+
+	.dg-users-list {
+
+	}
+
+	.dg-image-holder {
+		max-width: 30px;
+		max-height: 30px;
+	}
+
+	.dg-points {
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	.dg-user-name {
+		font-size: 10px;
+		line-height: 12px;
+	}
+}

@@ -1,0 +1,24 @@
+{{#NextMatch}}
+    <div class="dg-panel">
+        <img src="{{logo}}" class="dg-widget-logo"/>
+        <h4 class="dg-pretitle">{{StartDate}}</h4>
+        <h2 class="dg-title dg-results-hidden">Who will be leading at half-time?</h2>
+        <h2 class="dg-title dg-results-el">What others think</h2>
+
+        <div class="dg-choice-area dg-section-padding">
+            <div class="dg-teams-panels">
+                <div class="dg-team dg-home" style="background-image: url('{{HomeTeam.ImageUrl}}')">
+                    <h5 class="dg-team-name">{{HomeTeam.Name}}</h5>
+                    <div class="dg-results-el"><span></span></div>
+                </div>
+                <div class="dg-middle">vs</div>
+                <div class="dg-team dg-away" style="background-image: url({{AwayTeam.ImageUrl}})">
+                    <h5 class="dg-team-name">{{AwayTeam.Name}}</h5>
+                    <div class="dg-results-el"><span></span></div>
+                </div>
+            </div>
+
+            <div class="dg-btn dg-draw">Draw</div>
+        </div>
+    </div>
+{{/NextMatch}}

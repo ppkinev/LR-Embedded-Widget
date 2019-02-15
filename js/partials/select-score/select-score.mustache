@@ -1,0 +1,23 @@
+{{#NextMatch}}
+    <div class="dg-panel">
+        {{{backBtn}}}
+        <img src="{{logo}}" class="dg-widget-logo"/>
+        <h4 class="dg-pretitle">{{StartDate}}</h4>
+        <h2 class="dg-title dg-results-hidden">What do you think the full time score will be? (90 mins)</h2>
+        <h2 class="dg-title dg-results-el">What others think</h2>
+
+        <div class="dg-choice-area dg-section-padding">
+            <div class="dg-score-panels">
+                {{#HomeTeam}}
+                    {{>dgScore}}
+                {{/HomeTeam}}
+                <div class="dg-middle">vs</div>
+                {{#AwayTeam}}
+                    {{>dgScore}}
+                {{/AwayTeam}}
+                <div class="dg-score-results dg-results-el"><span></span></div>
+            </div>
+            <div class="dg-btn dg-confirm">Confirm</div>
+        </div>
+    </div>
+{{/NextMatch}}

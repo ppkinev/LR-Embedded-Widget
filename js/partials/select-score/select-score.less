@@ -1,0 +1,165 @@
+@import "../../../less/vars";
+
+.dg-score-panels {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin: -10px 0 5px;
+	position: relative;
+
+	.dg-team {
+		width: 45%;
+		padding: 0 10px;
+
+		.dg-image {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			min-width: 50px;
+			min-height: 50px;
+			border-radius: 50%;
+			position: relative;
+			background-position: center;
+			background-size: 75%;
+			background-repeat: no-repeat;
+			background-color: @white;
+			.outline-hover;
+
+			& when (@theme = 'black') {
+				border: none;
+
+				&:before{
+					box-shadow: none;
+				}
+
+				&:hover:before {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	.dg-middle {
+		font-size: 14px;
+		margin-top: 16px;
+	}
+
+	.dg-score-holder {
+		font-size: 30px;
+		font-weight: 100;
+		margin-top: 15px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px solid @grey-light;
+
+		.dg-score-value {
+			height: 40px;
+			line-height: 40px;
+		}
+
+		.dg-score {
+			width: 40px;
+			height: 40px;
+			position: relative;
+			cursor: pointer;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 60%;
+				transform: rotate(-45deg);
+				width: 8px;
+				height: 8px;
+				border-top: 1px solid @default;
+				border-right: 1px solid @default;
+
+				& when (@theme = 'black') {
+					border-top: 1px solid @white;
+					border-right: 1px solid @white;
+				}
+			}
+
+			&.dg-score-down {
+				&:after {
+					top: 35%;
+					left: 20%;
+					transform: rotate(135deg);
+				}
+			}
+
+			&[disabled] {
+				cursor: default;
+				&:after {
+					border-top: 1px solid @grey-light;
+					border-right: 1px solid @grey-light;
+				}
+			}
+
+			&:hover:not([disabled]) {
+				&:after {
+					border-top: 2px solid @brand;
+					border-right: 2px solid @brand;
+				}
+			}
+		}
+	}
+
+	.dg-team-name {
+		color: @grey-light;
+		font-size: 10px;
+		line-height: 14px;
+		margin-top: 6px;
+
+		& when (@theme = 'black') {
+			font-weight: 400;
+			font-size: 11px;
+		}
+	}
+
+	.dg-score-results {
+		position: absolute;
+		top: -10px;
+		left: -20px;
+		right: -20px;
+		height: 70px;
+		background-color: @results-fade;
+
+		& when (@theme = 'mbet') {
+			background-color: @mbet-results-fade;
+		}
+	}
+}
+
+.dg-small-screen {
+	.dg-score-panels {
+		margin: 5px 0 8px;
+
+		.dg-team {
+			.dg-image {
+				width: 40px;
+				height: 40px;
+				min-width: 40px;
+				min-height: 40px;
+				background-size: 60%;
+			}
+		}
+
+		.dg-score-holder {
+			font-size: 22px;
+			margin-top: 0;
+		}
+
+		.dg-score-results {
+			top: 0;
+			left: -30px;
+			right: -30px;
+			height: 40px;
+		}
+	}
+}

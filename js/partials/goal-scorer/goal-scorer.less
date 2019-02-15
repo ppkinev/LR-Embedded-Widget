@@ -1,0 +1,160 @@
+@import "../../../less/vars";
+
+.dg-teams-tabs {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+
+	.dg-team-tab {
+		width: 44%;
+		font-size: 12px;
+		line-height: 32px;
+		border: 1px solid @grey-blue;
+		padding: 0 10px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		cursor: pointer;
+		transition: background-color 0.25s ease,
+					color 0.25s ease;
+
+		& when (@theme = 'black') {
+			border: 1px solid @default;
+		}
+
+		&:first-child {
+			border-bottom-left-radius: 16px;
+			border-top-left-radius: 16px;
+		}
+
+		&:last-child {
+			margin-left: -1px;
+			border-bottom-right-radius: 16px;
+			border-top-right-radius: 16px;
+		}
+
+		&.dg-active {
+			background-color: @blue-bright;
+			color: @white;
+
+			& when (@theme = 'mbet') {
+				background-color: @mbet-brand;
+			}
+		}
+
+		&:hover {
+			background-color: @results-fade;
+			color: @white;
+
+			& when (@theme = 'mbet') {
+				background-color: @mbet-results-fade;
+			}
+		}
+	}
+}
+
+.dg-teams-players {
+	.dg-team-player {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		position: relative;
+		cursor: pointer;
+		height: 70px;
+		padding: 0 20px;
+		text-align: left;
+		border-bottom: 1px solid @grey-blue;
+		transition: background-color 0.25s ease,
+					color 0.25s ease;
+
+		& when (@theme = 'black') {
+			border-bottom: 1px solid @default;
+		}
+
+		&:first-child {
+			border-top: 1px solid @grey-blue;
+
+			& when (@theme = 'black') {
+				border-top: 1px solid @default;
+			}
+		}
+
+		&:hover {
+			background-color: @blue-bright;
+			color: @white;
+
+			.dg-player-team {
+				color: inherit;
+			}
+
+			& when (@theme = 'mbet') {
+				background-color: @mbet-light;
+			}
+		}
+	}
+
+	.dg-player-name {
+		font-size: 15px;
+		line-height: 18px;
+	}
+
+	.dg-player-team {
+		font-size: 12px;
+		line-height: 16px;
+		color: @grey-light;
+		font-weight: 100;
+	}
+
+	.dg-player-image {
+		width: 40px;
+		min-width: 40px;
+		height: 40px;
+		min-height: 40px;
+		border-radius: 50%;
+		position: relative;
+		background-color: @white;
+		background-position: center;
+		background-size: 65%;
+		background-repeat: no-repeat;
+		border: 1px solid @grey-blue;
+		margin-right: 12px;
+	}
+
+	.dg-results-el {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: @results-fade;
+	}
+}
+
+.dg-small-screen {
+	.dg-teams-players {
+		.dg-player-image {
+			width: 30px;
+			min-width: 30px;
+			height: 30px;
+			min-height: 30px;
+			background-size: 50%;
+		}
+
+		.dg-team-player {
+			height: 50px;
+		}
+
+		.dg-player-name {
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		.dg-player-team {
+			font-size: 10px;
+		}
+	}
+}

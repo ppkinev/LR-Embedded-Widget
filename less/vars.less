@@ -1,0 +1,65 @@
+@theme: 'light';
+
+// Backgrounds
+@bg-grey: #f2f5f7;
+@bg-shadow: #dfe9fb;
+
+
+// COLORS
+@default: #333333;
+@white: #ffffff;
+@grey-light: #bdbdbd;
+@grey-blue: #e0e7eb;
+@brand: #00309b;
+@blue-bright: #009dff;
+@red: #c23232;
+@orange: #ff9a00;
+//@results-fade: fade(@brand, 70%);
+@results-fade: fade(@blue-bright, 70%);
+
+
+// Black color scheme
+@black-bg: #113;
+//@black-bej: #ebdece;
+@black-bej: #ecb50e;
+@black-results-fade: fade(@brand, 80%);
+@black-bg-faded: fade(@black-bg, 90%);
+
+// MBet colors
+@mbet-brand: #cd232c;
+@mbet-black: #0e2445;
+@mbet-light: lighten(@mbet-brand, 20%);
+@mbet-results-fade: fade(@mbet-light, 70%);
+@mbet-push-fade: fade(@black-bg, 50%);
+
+@fb-main: #3a5998;
+@fb-light: #8b9dc3;
+
+// MODULES
+.outline-hover {
+	border: 1px solid @grey-blue;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: inherit;
+		box-shadow: 1px 1px 2px 0 @bg-shadow;
+		transition: box-shadow 0.3s ease;
+	}
+
+	&:hover:before {
+		box-shadow: 1px 1px 6px 3px @bg-shadow;
+	}
+}
+
+.disabled-button {
+	background-color: @grey-light;
+	cursor: default;
+}
